@@ -1,0 +1,24 @@
+{template "public","tagheader"}
+<!--main-->
+
+<div class="main cat-search">
+	<div class="col-auto">
+    <div class="place"><a href="{APP_PATH}" title="美女图片">美女图片</a><span> > </span><a href="http://www.mmiou.cc/tags.html" target="_blank">热门标签</a> > {$tag}</div>
+
+        <div class="search-point">共找到符合条件的标签 <strong style="color:red;">{$total}</strong> 个</div>
+          <ul class="search-list" style="clear: both;min-height: 500px;padding-top:10px;">
+			{loop $tagdata $r}
+           	<li style="margin:0;float: left;width: 100%;">
+               <h5 style="padding-bottom: 5px;"><a style="font-family: 黑体, Arial;font-size: 13px;" href="{str_replace('http://mmiou.cc','http://www.mmiou.cc',$r[url])}" title="{$r[title]}" target="_blank" class="blue fn">{$r[title]}</a> -- <span style="color:green;" class="green f12 fn">发布时间：{date('Y-m-d H:i',$r[updatetime])}</span></h5>
+			</li>
+			{/loop}
+			</li>
+
+        </ul>
+        <div id="pages" class="text-c">{$tags_pages}</div>
+  </div>
+</div>
+
+
+<div style="clear:both;"></div>
+{template "public","footer"}

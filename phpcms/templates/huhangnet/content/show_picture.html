@@ -1,0 +1,48 @@
+{template "public","header"}
+<link href="/statics/huhangnet/pc/css/content.css" rel="stylesheet" type="text/css" />
+
+<div class="place">您的位置:<a href='{APP_PATH}' title="美女图片">美女图片</a> > {hh_catpos($catid)} > {$title}</div>
+<div class="content">
+    <h1>{$title}</h1>
+    <div class="content-des">简介:{$SEO['description']}</div>
+    <div class="content-msg">更新时间：{date('Y-m-d H:i',$rs[inputtime])} <a href='{$CAT[url]}' title="{$CAT[catname]}" target="_blank">{$CAT[catname]}</a></div>
+    <div class="content-tags">
+    tag:
+    {loop explode(',',$SEO['keyword']) $keyword}
+	<a href="/tags-{urlencode($keyword)}/" title="{$keyword}" class="blue" target="_blank">{$keyword}</a>
+	{/loop}
+    </div>
+    <div class="content-pic">{$content}</div>
+    <div class="content-page">{$pages}</div>
+    <div class="updown">
+        <a href="{$previous_page[url]}" class="updown_l">{$previous_page[title]}</a>
+        <a href="{$next_page[url]}" class="updown_r">{$next_page[title]}</a>
+    </div>
+    {if $allow_comment && module_exists('comment')}
+    <iframe src="{APP_PATH}index.php?m=comment&c=index&a=init&commentid={id_encode("content_$catid",$id,$siteid)}&iframe=1" width="100%" height="100%" id="comment_iframe" frameborder="0" scrolling="no"></iframe>{/if}
+    <div class="otherpic">
+        <div class="arr_left"><span class="anleft"></span></div>
+        <div class="otherlist" id="opic">
+            <ul>
+                <?php $keywords = str_replace(',',' ',$SEO['keyword']);?>
+                {pc:content action="relation" relation="$relation" order="id desc" id="$id" catid="$catid" num="10" keywords="$keywords"}
+                {loop $data $r}
+                <li>
+                <a href="{$r[url]}" title="{$r[title]}" target="_blank"><img src="{hh_thumb($r[thumb],165,220)}" alt="{$r[title]}">{$r[title]}</a>
+                </li>
+                {/loop}
+                {/pc}
+            </ul>
+        </div>
+        <div class="arr_right"><span class="anright"></span></div>
+    </div>
+    <div style="clear:both;">
+        <script language="javascript" src="/statics/huhangnet/pc/js/mmpic.js"></script>
+        <script language="javascript" src="/statics/huhangnet/pc/js/mmm.js"></script>
+    </div>
+</div>
+
+
+
+<script language="JavaScript" src="{APP_PATH}api.php?op=count&id={$id}&modelid={$modelid}"></script>
+{template "public","footer"}

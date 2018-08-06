@@ -1,0 +1,95 @@
+{template "public","header"}
+<div class="main_top">
+    <div id="newbox">
+        {pc:content action="position" posid="1" order="listorder DESC" num="5"}{/pc}
+        <ul id="plist">
+            {loop $data $r}
+            <li{if $n==1} style="display: block;"{/if}><a href="{$r[url]}" title="{$r[title]}" target="_blank"><img src="{hh_thumb($r[thumb],267,357)}" alt="{$r[title]}" height="357" width="267"></a></li>
+            {/loop}
+        </ul>
+        <ul id="imgtitle">
+            {loop $data $r}
+            <li style="display: {if $n==1}block{else}none{/if};"><a href="{$r[url]}" title="{$r[title]}" target="_blank">{$r[title]}</a></li>
+            {/loop}
+        </ul>
+        <ul id="imgbtn">
+            {loop $data $r}
+            <li{if $n==1} class="newon"{/if}>{$n}</li>
+            {/loop}
+        </ul>
+    </div>
+    <script language="javascript" src="/statics/huhangnet/pc/js/new.js"></script>
+    <ul class="newest public-box">
+        {pc:content action="lists" catid="1" where="status=99" num="48" order="id DESC"}
+        {loop $data $r}
+        <li class="left-list_li"><a href="{$r[url]}" title="{$r[title]}" target="_blank" >{$r[title]}</a></li>
+        {/loop}
+        {/pc}
+    </ul>
+
+
+</div>
+<div class="main">
+    <div class="main-left">
+        
+        <ul class="column public-box">
+           <li class="column-title public-title"><span>热门美女排行</span></li>
+            {pc:content action="hits" catid="1,2,3,4,5,6,7,9" num="10" order="views DESC"}
+            {loop $data $r}
+            <li class="column-li"><a href="{$r[url]}" title="{$r[title]}" target="_blank"><img src="{hh_thumb($r[thumb],165,220)}" alt="{$r[title]}" />{$r[title]}</a></li>
+            {/loop}
+            {/pc}
+        </ul>
+        
+        <?php
+        $subcat = array(1,2,3,4,5,6,7,9);
+        ?>
+        {loop $subcat $sc}
+        <?php
+        $sc = $CATEGORYS[$sc];
+        ?>
+        <ul class="column public-box">
+            <li class="column-title public-title"><span>{$sc['catname']}</span><a href="{$sc[url]}" class="more" target="_blank">更多>></a></li>
+            {pc:content action="position" posid="3" order="listorder DESC" num="5" catid="$sc[catid]"}
+            {loop $data $r}
+            <li class="column-li"><a href="{$r[url]}" title="{$r[title]}" target="_blank"><img src="{hh_thumb($r[thumb],165,220)}" alt="{$r[title]}" />{$r[title]}</a></li>
+            {/loop}
+            {/pc}
+        </ul>
+        {/loop}
+        
+        <ul class="column public-box">
+            <li class="column-title public-title"><span>美女新闻</span><a href="/meinuxinwen/" class="more" target="_blank">更多>></a>
+            </li>
+            {pc:content action="lists" catid="8" num="5" order="listorder desc,id DESC"}
+            {loop $data $r}
+            <li class="column-li"><a href="{$r[url]}" title="{$r[title]}" target="_blank"><img src="{hh_thumb($r[thumb],165,220)}" alt="{$r[title]}" />{$r[title]}</a></li>
+            {/loop}
+            {/pc}
+        </ul>
+        
+    </div>
+    
+    <div class='index_tags'>
+    <h4>热门标签</h4>
+    {loop $hot_tags $r}
+    <a href='http://www.mmiou.cc/tags-{urlencode($r[tag])}/' title="{$r[tag]}" target="_blank">{$r[tag]}</a>
+    {/loop}
+    {/pc}
+    <a href='http://www.mmiou.cc/tags.html' target="_blank">更多标签</a>
+    </div>
+    
+    <div class="clearfloat"></div>
+</div>
+<div class="links public-box">
+    <div class="links_title public-title">友情链接</div>
+    <ul>
+        {pc:link  action="type_list" typeid="0" siteid="1" linktype="0" order="listorder DESC" num="89999999" return="link"}
+        {loop $link $v}
+        <li><a href="{$v['url']}" title="{$v['name']}" target="_blank">{$v['name']}</a></li>
+        {/loop}
+        {/pc}
+    </ul>
+    <div class="clearfloat"></div>
+</div>
+{template "public","footer"}

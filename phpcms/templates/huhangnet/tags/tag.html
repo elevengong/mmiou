@@ -1,0 +1,25 @@
+{template "public","tagheader"}
+<!--main-->
+
+<div class="main">
+    <dl class="list-left public-box">
+        <dt class="public-title">您的位置:<a href="{APP_PATH}" title="美女图片">美女图片</a> &gt; <a href="http://www.mmiou.cc/tags.html" target="_blank">热门标签</a> &gt; {$tag}</dt>
+        {loop $tagdata_thumb $r}
+        <dd>
+        <h2>
+        <a href="{str_replace('http://mmiou.cc','http://www.mmiou.cc',$r[url])}" title="{$r[title]}" target="_blank">
+        <img src="{hh_thumb($r[thumb],165,220)}" alt="{$r[title]}">
+        {$r[title]}
+        </a>
+        </h2>
+        </dd>
+        {/loop}
+        <dd class="page">{$tags_pages}</dd>
+
+    </dl>
+
+    <div class="clearfloat"></div>
+</div>
+
+<div style="clear:both;"></div>
+{template "public","footer"}

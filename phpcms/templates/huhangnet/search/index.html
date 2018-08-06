@@ -1,0 +1,21 @@
+{template "public","header"}
+
+<div class="main">
+    <dl class="list-left public-box">
+        <dt class="public-title">您的位置:<a href="{APP_PATH}" title="美女图片">美女图片</a> &gt; 搜索结果</dt>
+        <?php
+        $q = isset($_GET['q']) ? safe_replace($_GET['q']) : '';
+        $q = htmlspecialchars($q);
+        $w = 'status=99 and title like "%'.$q.'%"';
+        ?>
+        {pc:content action="lists" where="$w" catid="1" num="20" order="listorder desc,id DESC" page="$page"}
+        {loop $data $r}
+        <dd><a href="{$r[url]}" title="{$r[title]}" target="_blank"><img src="{hh_thumb($r[thumb],165,220)}" alt="{$r[title]}">{$r[title]}</a></dd>
+        {/loop}
+        <dd class="page">{$pages}</dd>
+        {/pc}
+    </dl>
+
+    <div class="clearfloat"></div>
+</div>
+{template "public","footer"}

@@ -1,0 +1,27 @@
+{template "public","header"}
+
+{template "public","topbar"}
+    <content id="content">
+        <!-- huhangnet start -->
+
+        {loop $datas $r}
+        <article id="post-1" class="post">
+            <div class="post-header">
+                <h2 class="post-title">
+                    <a class="post-title-link" href="{hh_m_show_url($r)}" rel="bookmark">{$r[title]}</a>
+                </h2>
+            </div>
+            <div class="post-content post-text">
+                <a href="{hh_m_show_url($r)}"><img src="{$r[thumb]}" alt="{strip_tags($r[title])}" ></a>
+                <p></p>
+            </div>
+            <div class="post-footer">
+                <span class="post-meta">{date('Y-m-d H:i:s',$r[inputtime])}</span>
+            </div>
+        </article>
+        {/loop}
+        {/pc}<!-- huhangnet end -->
+
+    </content>
+    <nav class="fenye" id="webpage"><span data-url="{hh_m_domain()}index.php?m=content&c=tag&a=lists&tag={$_GET[tag]}&page=[PAGE]" onclick="getmore(this);" data-listnode="content">查看更多</span></nav>
+{template "public","footer"}

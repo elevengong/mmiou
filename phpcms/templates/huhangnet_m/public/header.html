@@ -1,0 +1,44 @@
+{template "public","hhinit"}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,height=device-height, initial-scale=1.0, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta name="applicable-device" content="mobile">
+    <meta name="keywords" content="{$SEO['keyword']}">
+    <meta name="description" content="{$SEO['description']}">
+    <title>{if isset($SEO['title']) && !empty($SEO['title'])}{$SEO['title']}{/if}{$SEO['site_title']}</title>
+    <link href="/statics/huhangnet/m/css/style.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="http://libs.baidu.com/jquery/1.8.3/jquery.min.js"></script>
+    <script type="text/javascript" src="/statics/huhangnet/m/js/lazyload.js"></script>
+    <script type="text/javascript" src="/statics/huhangnet/m/js/aaoo.js"></script>
+
+</head>
+<body>
+<nav id="slide-menu">
+    <article>
+        <div class="menu-content">
+            <nav class="slide-menu">
+                <div class="slide-logo">
+                    <div class="slide-title">{$site[name]}</div>
+                </div>
+                <ul>
+                    <li><a href="{hh_m_domain()}">首页</a></li>
+                    <li class="dropdown">
+                        <ul>
+                            <?php
+                            $subcat = hh_subcat(0)
+                            ?>
+                            {loop $subcat $sc}
+                            <li class="cat-item cat-item-1"><a href="{hh_m_list_url($sc)}">{$sc[catname]}</a></li>
+                            {/loop}
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </article>
+</nav>
+<div id="page">

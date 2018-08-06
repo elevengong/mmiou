@@ -1,0 +1,7 @@
+<?php
+$siteid = 1;
+$site = siteinfo($siteid);
+if(!isset($CATEGORYS)){
+    $CATEGORYS = getcache('category_content_'.$siteid,'commons');
+}
+?>

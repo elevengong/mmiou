@@ -1,0 +1,31 @@
+{template "public","header"}
+
+{template "public","topbar"}
+    <content id="content">
+        <!-- huhangnet start -->
+        <?php
+        $q = isset($_GET['q']) ? safe_replace($_GET['q']) : '';
+        $w = 'status = 99 and title like "%'.$q.'%"';
+        ?>
+        {pc:content action="lists" catid="1" where="$w" num="1" order="listorder desc,id DESC" page="$page"}
+        {loop $data $r}
+        <article id="post-1" class="post">
+            <div class="post-header">
+                <h2 class="post-title">
+                    <a class="post-title-link" href="{hh_m_show_url($r)}" rel="bookmark">{$r[title]}</a>
+                </h2>
+            </div>
+            <div class="post-content post-text">
+                <a href="{$r[url]}"><img src="/statics/huhangnet/m/img/none.gif" data-img="{$r[thumb]}" alt="{$r[title]}" ></a>
+                <p></p>
+            </div>
+            <div class="post-footer">
+                <span class="post-meta">{date('Y-m-d H:i:s',$r[inputtime])}</span>
+            </div>
+        </article>
+        {/loop}
+        {/pc}<!-- huhangnet end -->
+
+    </content>
+    <nav class="fenye" id="webpage"><span data-url="{hh_m_domain()}index.php?m=search&q={$q}&page=[PAGE]" onclick="getmore(this);" data-listnode="content">查看更多</span></nav>
+{template "public","footer"}

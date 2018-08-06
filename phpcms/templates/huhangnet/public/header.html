@@ -1,0 +1,40 @@
+{template "public","hhinit"}<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script type="text/javascript" src="/statics/huhangnet/pc/js/uaredirect.js"></script>
+    <script type="text/javascript">
+        uaredirect("{if isset($rs)}{hh_m_show_url($rs)}{elseif isset($CAT)}{hh_m_list_url($CAT)}{else}{hh_m_domain()}{/if}");
+    </script>
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="applicable-device" content="pc">
+    <meta name="keywords" content="{$SEO['keyword']}">
+    <meta name="description" content="{$SEO['description']}">
+    <title>{if isset($SEO['title']) && !empty($SEO['title'])}{$SEO['title']}{/if}{if !$catid}{$SEO['site_title']}{/if}</title>
+    <meta name="mobile-agent" content="format=html5;url={$site[url]}" />
+    <link rel="shortcut icon" href="/statics/huhangnet/pc/image/favicon.ico" type="image/x-icon">
+    <link href="/statics/huhangnet/pc/css/style.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="http://libs.baidu.com/jquery/1.8.3/jquery.min.js"></script>
+</head>
+<body>
+
+<div class="header">
+    <h1><a href="{$site[url]}" title="MM我爱你_人体艺术_诱惑美臀_性感美女图片写真大全">MM我爱你_人体艺术_诱惑美臀_性感美女图片写真大全</a></h1>
+    <div class="share"><script language="javascript" src="{APP_PATH}statics/huhangnet/pc/js/bdshare.js"></script></div>
+    <div class="search"><form id="form1" name="form1" method="get" action="{APP_PATH}index.php">
+        <input type="hidden" name="m" value="search">
+        <input type="text" name="q" value="{htmlspecialchars($_GET['q'])}" id="textfield" class="search_text"/><input type="image" name="imageField" id="imageField" src="/statics/huhangnet/pc/image/search_btn.png" /></form></div>
+    <div class="search_hot">
+        {pc:block pos="top_search"}{/pc}
+    </div>
+</div>
+<div class="nav">
+    <ul>
+        <li><a href='{APP_PATH}' title="MM我爱你_人体艺术_诱惑美臀_性感美女图片写真大全">首页</a></li>
+        {pc:content action="category" catid="0" num="10" siteid="$siteid" order="listorder ASC"}
+        {loop $data $r}
+        <li><a href='{$r[url]}'>{$r[catname]}</a></li>
+        {/loop}
+        {/pc}
+    </ul>
+</div>

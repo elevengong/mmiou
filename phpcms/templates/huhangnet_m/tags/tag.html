@@ -1,0 +1,32 @@
+{template "public","header"}
+
+{template "public","topbar"}
+<!--main-->
+
+<content id="content">
+<div class="place"><a href="http://m.mmiou.cc">美女图片</a><span> > </span><a href="http://m.mmiou.cc/tags.html">热门标签</a> > {$tag}</div>
+<div class="search-point">共找到符合条件的标签 <strong style="color:red;">{$total}</strong> 个</div>
+        <!-- huhangnet start -->
+        {loop $tagdata_thumb $r}
+        <article id="post-1" class="post">
+            <div class="post-header">
+                <h2 class="post-title">
+                    <a class="post-title-link" href="{hh_m_show_url($r)}" rel="bookmark">{$r[title]}</a>
+                </h2>
+            </div>
+            <div class="post-content post-text">
+                <a href="{hh_m_show_url($r)}"><img src="{$r[thumb]}" alt="{$r[title]}" ></a>
+                <p></p>
+            </div>
+            <div class="post-footer">
+                <span class="post-meta">{date('Y-m-d H:i:s',$r[inputtime])}</span>
+            </div>
+        </article>
+        {/loop}
+
+<div id="pages" class="text-c" style="text-align:center;">{$tags_pages}</div>
+</content>
+
+
+<div style="clear:both;"></div>
+{template "public","footer"}

@@ -1,0 +1,16 @@
+{template "public","header"}
+
+<div class="main">
+    <dl class="list-left public-box">
+        <dt class="public-title">您的位置:<a href="{APP_PATH}" title="美女图片">美女图片</a> &gt; {hh_catpos($catid)}</dt>
+        {pc:content action="lists" catid="$catid" num="20" order="listorder desc,id DESC" page="$page"}
+        {loop $data $r}
+        <dd><h2><a href="{$r[url]}" title="{$r[title]}" target="_blank"><img src="{hh_thumb($r[thumb],165,220)}" alt="{$r[title]}">{$r[title]}</a></h2></dd>
+        {/loop}
+        <dd class="page">{$pages}</dd>
+        {/pc}
+    </dl>
+
+    <div class="clearfloat"></div>
+</div>
+{template "public","footer"}

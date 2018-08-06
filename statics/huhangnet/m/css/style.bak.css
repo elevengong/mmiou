@@ -1,0 +1,339 @@
+body{
+    background: #fff;
+    max-width: 720px;
+    margin: 0 auto;
+}
+
+.hh-header{
+    height: 3rem;
+}
+.hh-header-placeholder{
+    height: 3rem;
+}
+.hh-header a.logo{
+    display: block;
+    height: 100%;
+    text-align: left;
+}
+.hh-header a.logo img{
+    height: 100%;
+}
+.hh-header-right{
+    width: 3rem;
+}
+.hh-header-right a{
+    display: block;
+    font-size: 1.6rem;
+    height: 100%;
+    line-height: 3rem;
+    font-size: 1.8rem;
+    color: #035757;
+}
+
+
+/*顶部菜单*/
+.nav{
+    background: #fff;
+    overflow: hidden;
+    line-height: 2.2rem;
+    position: fixed;
+    top:3rem;
+    right:0;
+    z-index: 9999;
+    -moz-box-shadow: 0px 0px 6px #999;
+    -webkit-box-shadow: 0px 0px 6px #999;
+    box-shadow: 0px 0px 6px #999;
+    width: 10rem;
+    display: none;
+}
+.nav li{
+    text-align: center;
+}
+.nav li a{
+    display: block;
+    color: #035757;
+    border-bottom: 1px solid #f5f5f5;
+}
+.nav li.curr a,.nav li a:focus{
+    color: #fff;
+    background: #035757;
+}
+
+.subnav{
+    background: #999;
+    overflow: hidden;
+    font-size: 0.9rem;
+}
+.subnav li{
+    width: 25%;
+    float: left;
+    line-height: 1.8rem;
+    border-bottom: 1px solid #aaa;
+}
+.subnav li a{
+    display: block;
+    text-align: center;
+    color: #fff;
+}
+.subnav li a:focus,.subnav li.curr a{
+    background: #035757;
+}
+
+.ibox{
+    margin: 0 8px 8px 8px;
+    border: 1px solid #eee;
+    border-radius: 5px;
+    padding: 0 10px 10px;
+    display: block;
+}
+.ibox .head{
+    height: 2rem;
+    line-height: 2rem;
+}
+.ibox .head b{
+    color: #035757;
+}
+.ibox .head .more{
+    float: right;
+    font-size: .8rem;
+}
+.ibox .img{  }
+.ibox .img img{
+    width: 100%;
+}
+.ibox .desc{
+    font-size: .85rem;
+}
+.ibox{  }
+.gochannel{
+    display: block;
+    height: 2rem;
+    line-height: 2rem;
+    margin: 0 8px;
+    border: 1px solid #efefef;
+    background-color: #f6f5f5;
+    text-align: center;
+    font-size: .9rem;
+}
+.gochannel span{
+    position: relative;
+    top: 2px;
+}
+
+
+
+/*幻灯片*/
+.slideBox{ position:relative; width:100%; overflow:hidden; }
+.slideBox .hd{ position:absolute; height:28px; line-height:28px; bottom:0; right:0; z-index:1; }
+.slideBox .hd li{ display:inline-block; width:5px; height:5px; -webkit-border-radius:5px; -moz-border-radius:5px; border-radius:5px; background:#333; text-indent:-9999px; overflow:hidden; margin:0 6px;   }
+.slideBox .hd li.on{ background:#fff;  }
+.slideBox .bd{ position:relative; z-index:0; }
+.slideBox .bd li{ position:relative;  }
+.slideBox .bd li img{ width:100%;  height:100%; display:block;   }
+.slideBox .bd li a{ -webkit-tap-highlight-color:rgba(0, 0, 0, 0); /* 取消链接高亮 */ }
+.slideBox .bd li .tit{ display:block; width:100%;  position:absolute; bottom:0; text-indent:10px; height:28px; line-height:28px; background:url(../images/m/focusBg.png) repeat-x; color:#fff;   }
+
+/* 首页tab */
+.tabBox .bd{ clear: both;  }
+
+
+.crumbs{
+    padding: 8px;
+    background: #f8f8f8;
+    font-size: .9rem;
+}
+
+
+
+.tit-1{
+    height:40px;
+    line-height:40px;
+    border-top:2px solid #9ac7ed;
+    background: #fafafa url(../images/m/tab-bg.png) no-repeat left top;
+    background-size: 320px 31px;
+    clear: both;
+    padding: 0 8px;
+}
+.tit-1 .more{
+    font-size: .85rem;
+    float: right;
+}
+.tit-1 h3{
+    font-size: 1rem;
+    margin: 0;
+    font-weight: normal;
+    color: #2a70be;
+}
+.tit-1 ul{ }
+.tit-1 ul li{ float:left; padding:0 15px;
+    height: 40px;
+}
+.tit-1 ul li.on{
+    border-top: 2px solid #035757;
+    margin-top: -2px;
+    color: #035757;
+}
+
+.box-1{
+    background: #fafafa;
+}
+
+/*行高30的文字列表*/
+ul.list-1{
+    line-height: 35px;
+    padding: 3px 8px;
+    margin: 0;
+}
+ul.list-1 li{
+    overflow: hidden;
+    box-shadow: 0 1px 1px #fff;
+    border-bottom: 1px solid #eceef0;
+}
+ul.list-1 li a{
+    display: block;
+}
+ul.list-1 li.thumb{
+    line-height: 1.5rem;
+    padding: 8px 0;
+}
+ul.list-1 li.thumb img{
+    float: left;
+    margin-right: 8px;
+    padding: 1px;
+    border: 1px solid #e0e0e0;
+    background: #fff;
+    width: 5rem;
+    height: 4rem;
+}
+ul.list-1 li.thumb .desc{
+    color: #999;
+    font-size: 12px;
+    line-height: 1.2rem;
+    height: 2.5rem;
+    overflow: hidden;
+}
+
+
+ul.list-2{
+    padding: 0 4px;
+    overflow: hidden;
+    clear: both;
+    font-size: 12px;
+}
+ul.list-2 li{
+    padding: 0 4px;
+    width:50%;
+    float: left;
+    overflow: hidden;
+    margin-bottom: .5rem;
+}
+ul.list-2 li:nth-child(odd){
+    clear:left;
+}
+ul.list-2 li .img{
+    position: relative;
+}
+ul.list-2 li .img img{
+    width: 100%;
+    display: block;
+}
+ul.list-2 li .img .txt{
+    background: rgba(0,0,0,.5);
+    position: absolute;
+    bottom: 0;
+    left:0;
+    width: 100%;
+    padding: 5px;
+    color: #fff;
+}
+ul.list-2 li .title{
+    padding-top: 5px;
+    height: 1.7rem;
+    overflow: hidden;
+}
+ul.list-2{}
+
+.box{
+    padding: 5px 8px;
+    overflow: hidden;
+}
+
+/*内容页*/
+.art-box{}
+.art-h1{
+    color: #000;
+    text-align: left;
+}
+.art-h1 h1{
+    font-size: 1.3rem;
+    padding: 15px 0 5px;
+    margin: 0 8px;
+    font-weight: 700;
+}
+.art-info{
+    margin: 0 8px;
+    border-bottom: 1px solid #eceef0;
+    font-size: .85rem;
+    line-height: 2rem;
+}
+.art-cont{
+    padding: 8px;
+    overflow: hidden;
+}
+.prev-next{
+    padding: 5px 8px;
+    font-size: .9rem;
+}
+.art-titles{
+    padding: 5px 8px;
+    overflow: hidden;
+}
+.art-titles ol{
+    padding: 0 0 0 2rem;
+    font-size: .9rem;
+    margin: 0;
+}
+.art-titles ol li{
+    padding: 3px 0;
+}
+#pages{
+    text-align: center;
+    padding: 8px;
+}
+
+.related{}
+.related .head{
+    border-top:2px solid #4998e7;
+    border-bottom: 1px solid #e8e8e8;
+    height: 32px;
+    line-height: 32px;
+}
+.related .head h2{
+    color: #317ecb;
+    margin: 0;
+    padding: 0 10px 0;
+    font-size: 1.1rem;
+}
+
+
+.hh-footer{
+    box-shadow:0 1px 0 #e5e5e5 inset;
+}
+.hh-footer>div{
+    height: 100%;
+}
+.hh-footer>div>a{
+    display: block;
+    width: 33.3333%;
+    height: 100%;
+    line-height: 2.5rem;
+    float: left;
+    text-align: center;
+    border-left:1px solid #e5e5e5;
+}
+.hh-footer>div>a:nth-child(1){
+    border-left:0;
+}
+.hh-footer>div>a>span{
+    margin-right: .5rem;
+}

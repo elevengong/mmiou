@@ -1,0 +1,33 @@
+{template "public","header"}
+
+{template "public","topbar"}
+<style>
+<!--
+.search-list {font-size:14px;}
+.search-list a{display:inline-block;padding:10px;font-size:14px; height:20px;line-height:20px;}
+.font_16{font-size:16px;font-weight:bold;}
+.font_18{font-size:18px;font-weight:bold;}
+.color_16{color:red;}
+.color_18{color:blue;}
+
+-->
+</style>
+<!--main-->
+<div class="main cat-search">
+	<div class="col-auto">
+    <div class="place"><a href="http://m.mmiou.cc">首页</a><span> > </span>热门标签</div>
+        <div class="search-point" style="color:#A80B42;padding: 3px 1px 5px 5px;">共找到符合条件的标签 <strong class="red">{$total}</strong> 个</div>
+          <ul class="search-list" style="min-height: 500px;border: 1px solid #ac6fbb;">
+           	<li style="margin:0">
+				{loop $tagdata $r}
+				<a href="/tags-{urlencode($r['tag'])}/" class="font_1{rand(6, 8)} color_1{rand(6, 8)}" target="_blank">{$r['tag']}({$r['usetimes']})</a>
+				{/loop}
+			</li>
+
+        </ul>
+        <dd class="page pagetags" style="text-align:center;">{$wz_pages}</dd>
+       
+  </div>
+</div>
+<div style="clear:both;padding-bottom: 20px;"></div>
+{template "public","footer"}

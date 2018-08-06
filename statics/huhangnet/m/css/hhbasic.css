@@ -1,0 +1,318 @@
+/*护航网络设置常用元素基本样式*/
+html{line-height:1.15;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,footer,header,nav,section{display:block}h1{font-size:2em;margin:.67em 0}figcaption,figure,main{display:block}figure{margin:1em 40px}hr{box-sizing:content-box;height:0;overflow:visible}pre{font-family:monospace,monospace;font-size:1em}a{background-color:transparent;-webkit-text-decoration-skip:objects}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:inherit}b,strong{font-weight:bolder}code,kbd,samp{font-family:monospace,monospace;font-size:1em}dfn{font-style:italic}mark{background-color:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}audio,video{display:inline-block}audio:not([controls]){display:none;height:0}img{border-style:none}svg:not(:root){overflow:hidden}button,input,optgroup,select,textarea{font-family:sans-serif;font-size:100%;line-height:1.15;margin:0}button,input{overflow:visible}button,select{text-transform:none}[type=reset],[type=submit],button,html [type=button]{-webkit-appearance:button}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:1px dotted ButtonText}fieldset{padding:.35em .75em .625em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}progress{display:inline-block;vertical-align:baseline}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-cancel-button,[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}details,menu{display:block}summary{display:list-item}canvas{display:inline-block}template{display:none}[hidden]{display:none}
+html,body{
+    height: 100%;
+    font-size: .16rem;
+}
+p{
+    margin: 0 0 8px 0;
+}
+
+/*flex*/
+/*横向布局盒子*/
+.hh-flex-row{
+    display: box;
+    display: -webkit-box;
+    display: flex;
+    display: -webkit-flex;
+    box-orient: horizontal;
+    -webkit-box-orient: horizontal;
+    flex-direction: row;
+    -webkit-flex-direction: row;
+}
+/*纵向布局盒子*/
+.hh-flex-column{
+    display: box;
+    display: -webkit-box;
+    display: flex;
+    display: -webkit-flex;
+    box-orient: vertical;
+    -webkit-box-orient: vertical;
+    flex-direction: column;
+    -webkit-flex-direction: column;
+}
+/*项目宽/高权重*/
+.hh-flex-1{
+    box-flex: 1;
+    -webkit-box-flex: 1;
+    flex: 1 1 0;
+    -webkit-flex: 1 1 0;
+}
+.hh-flex-1-auto{
+    box-flex: 1;
+    -webkit-box-flex: 1;
+    flex: 1;
+    -webkit-flex: 1;
+}
+.hh-flex-2{
+    box-flex: 2;
+    -webkit-box-flex: 2;
+    flex: 2 2 0;
+    -webkit-flex: 2 2 0;
+}
+.hh-flex-2-auto{
+    box-flex: 2;
+    -webkit-box-flex: 2;
+    flex: 2;
+    -webkit-flex: 2;
+}
+.hh-flex-3{
+    box-flex: 3;
+    -webkit-box-flex: 3;
+    flex: 3 3 0;
+    -webkit-flex: 3 3 0;
+}
+.hh-flex-3-auto{
+    box-flex: 3;
+    -webkit-box-flex: 3;
+    flex: 3;
+    -webkit-flex: 3;
+}
+.hh-flex-4{
+    box-flex: 4;
+    -webkit-box-flex: 4;
+    flex: 4 4 0;
+    -webkit-flex: 4 4 0;
+}
+.hh-flex-4-auto{
+    box-flex: 4;
+    -webkit-box-flex: 4;
+    flex: 4;
+    -webkit-flex: 4;
+}
+/*主轴上对齐项目*/
+.hh-flex-justify-btw{
+    box-pack: justify;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    -webkit-justify-content: space-between;
+}
+.hh-flex-justify-center{
+    box-pack: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-justify-content: center;
+}
+.hh-flex-justify-right{
+    box-pack: end;
+    -webkit-box-pack: end;
+    justify-content: flex-end;
+    -webkit-justify-content: flex-end;
+}
+/*侧轴上对齐项目*/
+.hh-flex-align-center{
+    box-align: center;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-align-items: center;
+}
+.hh-flex-align-end{
+    box-align: end;
+    -webkit-box-align: end;
+    align-items: flex-end;
+    -webkit-align-items: flex-end;
+}
+.hh-flex-align-baseline{
+    box-align: baseline;
+    -webkit-box-align: baseline;
+    align-items: baseline;
+    -webkit-align-items: baseline;
+}
+.hh-flex-align-stretch{
+    box-align: stretch;
+    -webkit-box-align: stretch;
+    align-items: stretch;
+    -webkit-align-items: stretch;
+}
+/*hh-为全局定义样式开头*/
+#hh-page{
+    min-height: 100%;
+}
+.hh-iframe-wrapper {
+    -webkit-overflow-scrolling:touch;
+    overflow-y: auto;
+}
+.hh-frame-iframe {
+    border: none;
+}
+/*页面整体布局的CSS，可配置调整其中的一些参数*/
+
+#hh-toast {
+    z-index: 99999;
+    color: #333;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    background-color: rgba(0,0,0,.8);
+    color: #fff;
+    padding: 5px 10px;
+    transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-box-shadow: 5px 5px 5px #999;
+    -webkit-box-shadow: 5px 5px 5px #999;
+    box-shadow: 5px 5px 5px #999;
+    -moz-box-shadow: 5px 5px 5px #999;
+    -webkit-box-shadow: 5px 5px 5px #999;
+    display: none;
+}
+
+#hh-loading {
+    color: #fff;
+    position: fixed;
+    z-index: 9999999999;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(33,33,33,0.5);
+    transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+}
+
+/* 定义页面整体是一个竖向的盒子模型*/
+#hh-page {
+    display: box;
+    display: -webkit-box;
+    display: flex;
+    display: -webkit-flex;
+    box-orient: vertical;
+    -webkit-box-orient: vertical;
+    flex-direction: column;
+    -webkit-flex-direction: column;
+}
+.hh-header{
+    height: .4rem;
+    line-height: .4rem;
+    width: 100%;
+    text-align: center;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 9999;
+    color: #000;
+    background-color: #fff;
+    box-shadow: 0 -1px 0 #e5e5e5 inset;
+    display: box;
+    display: -webkit-box;
+    display: flex;
+    display: -webkit-flex;
+    box-align: center;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-align-items: center;
+}
+.hh-header-placeholder{
+    height: .4rem;
+    width: 100%;
+}.hh-header-left{
+     width: .4rem;
+     height: 100%;
+ }
+.hh-header-center{
+    box-flex: 1;
+    -webkit-box-flex: 1;
+    flex: 1 1 0;
+    -webkit-flex: 1 1 0;
+    font-size: 1.125em;
+    color: #000;
+}
+.hh-header-right{
+    width: .4rem;
+    height: 100%;
+}
+.hh-header-left a,.hh-header-right a{
+    display: block;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+/*.hh-header:after{
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  border-top: 1px solid #fbfaf8;
+}*/
+.hh-content{
+    width: 100%;
+    box-flex: 1;
+    -webkit-box-flex: 1;
+    flex: 1 1 auto;
+    -webkit-flex: 1 1 auto;
+    position: relative;
+}
+.hh-footer{
+    height: .4rem;
+    width: 100%;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    z-index: 9999;
+    background-color: #fff;
+    box-shadow: 0 1px 0 #e5e5e5 inset;
+    overflow: hidden;
+}
+.hh-footer-placeholder{
+    height: .4rem;
+    width: 100%;
+}
+
+.foot-nav{
+    height: .4rem;
+    line-height: .4rem;
+}
+.foot-nav .li{
+    height: 100%;
+}
+
+
+
+
+/*显示/隐藏某个元素(in)visible*/
+.hh-visible{
+    display: block;
+}
+.hh-invisible{
+    display: none;
+}
+
+.hh-cul,.hh-cul ul,.hh-cul li{ margin: 0; padding: 0; list-style: none; vertical-align: middle; }
+.hh-bsbb *{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.hh-cb{
+    clear: both;
+}
+.hh-h10{ height: .1rem;  clear: both;  }
+.hh-h20{ height: .2rem;  clear: both;  }
+.hh-h30{ height: .3rem;  clear: both;  }
+.hh-h40{ height: .4rem;  clear: both;  }
+.hh-h50{ height: .5rem;  clear: both;  }
+
+
+.hh-nowrap,.hh-nowrap-all>*,.hh-nowrap-a a{white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
+.hh-fr{  float: right;  }
+.hh-fl{  float: left;  }
+.hh-tal{ text-align: left; }
+.hh-tac{ text-align: center; }
+.hh-tar{ text-align: right; }
+.hh-copyright{
+    margin-top: .1rem;
+    box-shadow:0 1px 0 #e5e5e5 inset;
+    border-top:1px solid #efefef;
+    padding: 15px 8px 5px;
+    overflow: hidden;
+    clear: both;
+}

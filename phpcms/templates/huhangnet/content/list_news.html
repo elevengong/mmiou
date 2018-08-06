@@ -1,0 +1,51 @@
+{template "public","header"}
+
+<div class="main">
+    <div class="list-new-left public-box">
+        <div class="public-title list-position">您的位置:<a href="{APP_PATH}" title="美女图片">美女图片</a> &gt; {hh_catpos($catid)}</div>
+
+        
+        {pc:content action="lists" catid="$catid" num="10" order="listorder desc,id DESC" page="$page"}
+        {loop $data $r}
+        <?php $arr_keyword = explode(' ',$r['keywords'])?>
+        <div class='list-new-list'>
+            <div class="list-new-img">
+                <a href="{$r[url]}" title="{$r[title]}" target="_blank"><img src="{hh_thumb($r[thumb],120,160)}" alt="{$r[title]}" width="120" height="160"></a>
+            </div>
+            <div class="list-new-title"><h2><a title="{$r[title]}" href="{$r[url]}" target="_blank">{$r[title]}</a></h2></div>
+            <div class="lnew_time"> 时间:{date('Y-m-d H:i',$r[inputtime])}</div>
+            <div class='list-new-tag'>标签: 
+                 {loop $arr_keyword  $keyword}
+	             <a href="/tags-{urlencode($keyword)}/" title="{$keyword}" class="blue" target="_blank">{$keyword}</a>
+	             {/loop}
+            </div>
+        </div>
+        {/loop}
+        
+        <div class="page">{$pages}</div>
+        {/pc}
+        
+        
+    </div>
+    <div class="main-right">
+
+        <dl class="list_hot public-box">
+            <dt class="public-title">用户最爱看</dt>
+            {pc:content action="hits" catid="$catid" num="10" order="views DESC" cache="3600"}
+            {loop $data $r}
+            <dd><a href="{$r[url]}" title="{$r[title]}" target="_blank">{$r[title]}</a></dd>
+            {/loop}
+            {/pc}
+        </dl>
+        <dl class="channel_list public-box list_new">
+            <dt class="public-title">推荐阅读</dt>
+            {pc:content action="lists" catid="$catid" num="10" order="id DESC"}
+            {loop $data $r}
+            <dd class="list_new_support"><a href="{$r[url]}" title="{$r[title]}" target="_blank">{$r[title]}</a></dd>
+            {/loop}
+            {/pc}
+        </dl>
+    </div>
+    <div class="clearfloat"></div>
+</div>
+{template "public","footer"}
